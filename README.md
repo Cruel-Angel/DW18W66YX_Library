@@ -1,16 +1,16 @@
-admin :
+admin :\n
 
-"email": "admin@admin.com",
-"password": "admin"
+"email": "admin@admin.com",\n
+"password": "admin"\n
 
-user :
-"email": "aku@siapa.com",
-"password": "123"
+user :\n
+"email": "aku@siapa.com",\n
+"password": "123"\n
 
-module used :
-react-route-dom
-react-bootstrap
-react-icons
+module used :\n
+react-route-dom\n
+react-bootstrap\n
+react-icons\n
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
