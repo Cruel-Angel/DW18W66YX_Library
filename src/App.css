@@ -1,0 +1,31 @@
+.Landing_Body {
+  background-image: url(./Asset/Vector\ 1.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+li {
+  color: #292929;
+  font-size: 25px;
+  padding: 24px 50px 25px 39px;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+li:hover {
+  border-radius: 50px;
+  background-color: #ee4622;
+  color: white;
+  cursor: pointer;
+}
+.DataUser {
+  font: avenir;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 20px;
+}
+.DetailDataUser {
+  font: google sans;
+  color: #8a8c90;
+  font-size: 12px;
+  line-height: 16px;
+}
