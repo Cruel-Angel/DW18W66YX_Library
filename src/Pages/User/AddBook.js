@@ -69,6 +69,7 @@ const AddBook = () => {
                   borderRadius: "5px",
                   borderWidth: "thin",
                   borderColor: "#D2D2D2",
+                  cursor: "pointer",
                 }}
               >
                 Attach Book File{" "}

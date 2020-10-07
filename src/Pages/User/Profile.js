@@ -23,7 +23,7 @@ const Profile = () => {
             fontSize: "36px",
             fontWeight: "bold",
             lineHeight: "101.5%",
-            marginLeft: "10px",
+            marginLeft: "-15px",
             marginBottom: "39px",
           }}
         >
