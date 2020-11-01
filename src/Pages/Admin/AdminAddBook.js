@@ -16,7 +16,7 @@ const AdminAddBook = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [when, setWhen] = useState("");
-  const [categoryId, setCategoryId] = useState(1);
+  const [CategoryId, setCategoryId] = useState(1);
   const [newBook, setNewBook] = useState([]);
   const [getISBN, setGetISBN] = useState("");
   useEffect(() => {
@@ -159,13 +159,13 @@ const AdminAddBook = () => {
         console.log("ini id buku yang barusaja dibuat ==> ");
         const BookId = newBook.id;
         console.log(BookId);
-        console.log("ini categoryId = " + categoryId);
+        console.log("ini CategoryId = " + CategoryId);
         const config = {
           headers: {
             "Content-Type": "application/json",
           },
         };
-        const body = JSON.stringify({ BookId, categoryId });
+        const body = JSON.stringify({ BookId, CategoryId });
         const res = API.post(`relation`, body, config);
       } catch (err) {
         console.log(err.response.data.message);

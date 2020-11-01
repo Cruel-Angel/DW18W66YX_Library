@@ -15,7 +15,7 @@ const AddBook = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [when, setWhen] = useState("");
-  const [categoryId, setCategoryId] = useState(1);
+  const [CategoryId, setCategoryId] = useState(1);
   const [newBook, setNewBook] = useState([]);
   const [getISBN, setGetISBN] = useState("");
   useEffect(() => {
@@ -163,7 +163,7 @@ const AddBook = () => {
             "Content-Type": "application/json",
           },
         };
-        const body = JSON.stringify({ BookId, categoryId });
+        const body = JSON.stringify({ BookId, CategoryId });
         const res = API.post(`relation`, body, config);
       } catch (err) {
         console.log(err.response.data.message);

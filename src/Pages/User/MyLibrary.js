@@ -23,7 +23,7 @@ const MyLibrary = () => {
   {
     loading ? console.log("LOADING RELATIONS....") : console.log(relations);
   }
-  const founded = relations.find((item) => item.userId === state.user.id);
+  const founded = relations.find((item) => item.UserId === state.user.id);
   return (
     <div>
       <div

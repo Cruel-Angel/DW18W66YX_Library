@@ -99,7 +99,7 @@ const Detail = () => {
   }, [click]);
 
   const isBookmark = relations.filter(
-    (item) => item.userId == state.user.id && item.bookId == id
+    (item) => item.UserId == state.user.id && item.BookId == id
   );
 
   useEffect(() => {
