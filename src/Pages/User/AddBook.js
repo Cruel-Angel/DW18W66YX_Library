@@ -62,7 +62,7 @@ const AddBook = () => {
   let getPublication = getMonth.concat(getYear);
 
   const SUPPORTED_FORMATS_IMAGE = ["image/jpg", "image/jpeg", "image/png"];
-  const SUPPORTED_FORMATS_FILE = ["application/pdf", "application/epub+zip"];
+  const SUPPORTED_FORMATS_FILE = ["application/epub+zip"];
 
   const {
     handleSubmit,
@@ -104,7 +104,7 @@ const AddBook = () => {
         .required()
         .test(
           "fileFormat",
-          "Sorry only accept epub/pdf filetype",
+          "Sorry only accept epub filetype",
           (value) => value && SUPPORTED_FORMATS_FILE.includes(value.type)
         ),
     }),

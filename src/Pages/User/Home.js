@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Dropdown, Carousel } from "react-bootstrap";
 import ListBook from "../../Components/ListBook";
 import Frame from "../../Asset/Frame.png";
-import Fix_You from "../../Data/Thumbnail/Fix_You.png";
 import { useHistory } from "react-router-dom";
 import { API, urlAsset } from "../../config/api";
 const Home = () => {

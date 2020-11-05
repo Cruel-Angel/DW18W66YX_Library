@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { CartContext } from "../../Context/CartContext";
 import { useQuery } from "react-query";
@@ -13,12 +13,12 @@ import { API, urlAsset } from "../../config/api";
 
 import ListBook from "../../Components/ListBook";
 
-import Profile_addPP from "./Profile_addPP";
+import Profile_addPP from "../../Components/Profile_addPP";
 
 import "../../App.css";
 
 const Profile = () => {
-  const [state, dipatch] = useContext(CartContext);
+  const [state] = useContext(CartContext);
   const [modalShow, setModalShow] = React.useState(false);
 
   const { isLoading, error, data: User, refetch } = useQuery(
@@ -28,7 +28,7 @@ const Profile = () => {
 
   return (
     <>
-      {state.user === undefined || isLoading ? (
+      {state.user === undefined || isLoading || error ? (
         <>
           <span
             className="spinner-border spinner-border-sm"
@@ -73,7 +73,11 @@ const Profile = () => {
                       <Col>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                           <Col xs={1}>
-                            <img src={Email} style={{ marginTop: "10px" }} />
+                            <img
+                              src={Email}
+                              alt="email"
+                              style={{ marginTop: "10px" }}
+                            />
                           </Col>
                           <Col xs={11} style={{ marginLeft: "15px" }}>
                             <div className="DataUser">{state.user.email}</div>
@@ -84,7 +88,11 @@ const Profile = () => {
                       <Col style={{ marginTop: "28px" }}>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                           <Col xs={1}>
-                            <img src={Gender} style={{ marginTop: "10px" }} />
+                            <img
+                              src={Gender}
+                              alt="gender"
+                              style={{ marginTop: "10px" }}
+                            />
                           </Col>
                           <Col xs={11} style={{ marginLeft: "15px" }}>
                             <div className="DataUser">{state.user.gender}</div>
@@ -95,7 +103,11 @@ const Profile = () => {
                       <Col style={{ marginTop: "28px" }}>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                           <Col xs={1}>
-                            <img src={Phone} style={{ marginTop: "10px" }} />
+                            <img
+                              src={Phone}
+                              alt="phone"
+                              style={{ marginTop: "10px" }}
+                            />
                           </Col>
                           <Col xs={11} style={{ marginLeft: "15px" }}>
                             <div className="DataUser">{state.user.phone}</div>
@@ -106,7 +118,11 @@ const Profile = () => {
                       <Col style={{ marginTop: "28px" }}>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                           <Col xs={1}>
-                            <img src={Address} style={{ marginTop: "10px" }} />
+                            <img
+                              src={Address}
+                              alt="address"
+                              style={{ marginTop: "10px" }}
+                            />
                           </Col>
                           <Col xs={11} style={{ marginLeft: "15px" }}>
                             <div className="DataUser">{state.user.address}</div>

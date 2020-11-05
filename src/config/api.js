@@ -16,9 +16,15 @@ export const API = axios.create({
 
 //production
 export const urlAsset = {
-  avatar: "https://library-api-rizky-iqbal.herokuapp.com/public/avatars/",
+  //Heroku
+  /*avatar: "https://library-api-rizky-iqbal.herokuapp.com/public/avatars/",
   thumbnail: "https://library-api-rizky-iqbal.herokuapp.com/public/thumbnails/",
-  file: "https://library-api-rizky-iqbal.herokuapp.com/public/files/",
+  file: "https://library-api-rizky-iqbal.herokuapp.com/public/files/",*/
+
+  //cloudinary
+  avatar: "https://res.cloudinary.com/rizkyiqbal/",
+  thumbnail: "https://res.cloudinary.com/rizkyiqbal/",
+  file: "https://res.cloudinary.com/rizkyiqbal/raw/upload/",
 };
 export const API = axios.create({
   baseURL: "https://library-api-rizky-iqbal.herokuapp.com/api/v1",

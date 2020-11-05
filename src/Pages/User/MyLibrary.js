@@ -3,7 +3,7 @@ import ListBook from "../../Components/ListBook";
 import { API } from "../../config/api";
 import { CartContext } from "../../Context/CartContext";
 const MyLibrary = () => {
-  const [state, dispatch] = useContext(CartContext);
+  const [state] = useContext(CartContext);
   const [loading, setLoading] = useState(true);
   const [relations, setRelations] = useState([]);
   useEffect(() => {
@@ -20,9 +20,6 @@ const MyLibrary = () => {
     };
     loadRelation();
   }, []);
-  {
-    loading ? console.log("LOADING RELATIONS....") : console.log(relations);
-  }
   const founded = relations.find((item) => item.UserId === state.user.id);
   return (
     <div>

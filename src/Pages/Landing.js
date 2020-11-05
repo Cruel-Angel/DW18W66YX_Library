@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import Logo from "../Asset/Icon.png";
-import Signin from "./User/Signin";
-import Signup from "./User/Signup";
+import Signin from "../Components/Signin";
+import Signup from "../Components/Signup";
 import "../App.css";
 const Landing = () => {
   const [modalShowsignin, setModalShowsignin] = React.useState(false);

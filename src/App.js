@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
-import { CartContextProvider, CartContext } from "./Context/CartContext";
+import { CartContext } from "./Context/CartContext";
 import { UserRoute, AdminRoute } from "./Context/PrivateRoute";
 
 //import Pages
@@ -9,11 +9,12 @@ import HomeAdmin from "./Pages/Admin/HomeAdmin";
 
 import Detail from "./Pages/User/Detail";
 import Home from "./Pages/User/Home";
-import Sidebar from "./Pages/User/Sidebar";
 import Profile from "./Pages/User/Profile";
 import MyLibrary from "./Pages/User/MyLibrary";
 import AddBook from "./Pages/User/AddBook";
-import ReadBook from "./Pages/User/ReadBook";
+
+import Sidebar from "./Components/Sidebar";
+import ReadBook from "./Components/ReadBook";
 
 import AdminAddBook from "./Pages/Admin/AdminAddBook";
 
@@ -25,7 +26,6 @@ if (localStorage.token) {
 
 function App() {
   const [state, dispatch] = useContext(CartContext);
-  const history = useHistory();
   useEffect(() => {
     const loadUser = async () => {
       try {
@@ -48,7 +48,6 @@ function App() {
         });
       }
     };
-
     loadUser();
   }, []);
   return (

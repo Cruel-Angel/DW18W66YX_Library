@@ -7,6 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Button } from "react-bootstrap";
 import AlertModal from "../../Components/AlertModal";
 import { useMutation } from "react-query";
+import ReactHtmlParser from "react-html-parser";
 const style = {
   ket: {
     font: "avenir",
@@ -59,7 +60,7 @@ const Detail = () => {
       };
 
       const body = JSON.stringify({ BookId, UserId });
-      const res = await API.post("/relations", body, config);
+      await API.post("/relations", body, config);
       setLoading(false);
       setClick(true);
       setShow("add");
@@ -72,7 +73,7 @@ const Detail = () => {
   const [remove] = useMutation(async () => {
     try {
       setLoading(true);
-      const res = await API.delete(`/relations/${id}/${state.user.id}`);
+      await API.delete(`/relations/${id}/${state.user.id}`);
       setLoading(false);
       setClick(true);
       setShow("remove");
@@ -99,7 +100,7 @@ const Detail = () => {
   }, [click]);
 
   const isBookmark = relations.filter(
-    (item) => item.UserId == state.user.id && item.BookId == id
+    (item) => item.UserId === state.user.id && item.BookId === id
   );
 
   useEffect(() => {
@@ -117,6 +118,7 @@ const Detail = () => {
     };
     getBook();
   }, []);
+  console.log(book);
   return (
     <div className="container">
       {loading ? (
@@ -205,7 +207,7 @@ const Detail = () => {
                     color: "#929292",
                   }}
                 >
-                  {book.aboutBook}
+                  {ReactHtmlParser(book.aboutBook)}
                 </p>
               </div>
             </div>
